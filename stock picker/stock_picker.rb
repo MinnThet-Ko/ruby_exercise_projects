@@ -15,7 +15,7 @@ def stock_picker(stock_array)
     best_sell_day = Hash[:stock => 0, :index => 0]
     best_buy_day = Hash[:stock => 0, :index => 0]
 
-    #find the best day to buy stock
+    #find the best day to sell stock
     stock_array.each_with_index do |stock,index|
         if best_sell_day[:stock] < stock and index != 0
             best_sell_day[:stock] = stock
@@ -23,6 +23,7 @@ def stock_picker(stock_array)
         end
     end
 
+    #pick the best to buy stock 
     stock_array.each_with_index do |stock,index|
         if best_buy_day[:stock] == 0  
             best_buy_day[:stock] = stock
